@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata minClientVersion="3.3.0">
+    <id>IIC.Cds.ConnectToRepo.Sources</id>
+    <version>$version$</version>
+    <description>CDS dependency artifacts for the ConnectToRepo solution.</description>
+    <authors>In Time Tec</authors>
+    <owners>Idaho Industrial Commission</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>    
+    <tags></tags>
+    <dependencies>      
+      <!--<dependency id="xxxxx.Sources" version="1.0.0.2" />-->
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="temp\packed\ConnectToRepo_managed.zip" target="content/CdsDependencies/ConnectToRepo_$version$/ConnectToRepo_managed.zip" />    
+   <!-- <file src="temp\packed\ConfigData.zip" target="content/CdsDependencies/ConnectToRepo_$version$/ConfigData.zip" />
+    <file src="temp\packed\TestData.zip" target="content/CdsDependencies/ConnectToRepoCore_$version$/TestData.zip" /> -->
+  </files>
+</package>

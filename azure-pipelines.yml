@@ -1,0 +1,111 @@
+﻿# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+name: '$(Build.SourceBranchName)$(rev:.r)'
+
+trigger:
+- release/*
+- dev
+
+pool:
+  name: IIC Jump Boxes
+
+variables:
+  solution: '**/**.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  CRM_SDK_PATH: 'C:/hostedtoolcache/windows\CdsDevTools\Tools'
+  Version.Revision: '$(Build.SourceBranchName)'
+  Version.Formatted: '$(Build.BuildNumber)'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: PowerShell@2
+  displayName: 'Install Supporting PowerShell Modules' 
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Import supporting PowerShell modules      
+      Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+      Install-Module -Name Microsoft.Xrm.Data.Powershell -Force -Verbose -Scope CurrentUser
+      Install-Module -Name Microsoft.Xrm.Tooling.ConfigurationMigration -Force -Verbose -Scope CurrentUser
+      Install-Module -Name Microsoft.Xrm.DevOps.Data.PowerShell -Force -Verbose -Scope CurrentUser
+
+- task: PowerShell@2
+  displayName: 'Set Cds Solution Number to Build Version Number'
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'))
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Update the version number in the solution file before packing
+      $fileName = $Env:BUILD_SOURCESDIRECTORY + '\DeploymentPackage\CdsSolution\Other\solution.xml'
+      Write-Host Solution file location is $fileName
+      Write-Host Setting version number to $Env:Version_Formatted
+      [xml] $xdoc = get-content $fileName
+      $version = $xdoc.SelectSingleNode('//Version')
+      $version.InnerText = $Env:Version_Formatted
+      $xdoc.Save($fileName) 
+      
+- task: NuGetCommand@2
+  displayName: 'NuGet Solution Restore'
+  inputs:
+    command: 'restore'
+    restoreSolution: '$(solution)'
+    feedsToUse: 'select'
+    vstsFeed: '0ddd6187-3494-46a5-b396-8f7be21064a3/dca352bc-32b5-4be1-8ff4-feab1bb0eb73'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  displayName: 'NuGet Pack Cds Dependency Artifact Package'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+  inputs:
+    command: 'pack'
+    packagesToPack: 'DeploymentPackage/CdsArtifacts.nuspec'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'Version.Formatted'
+
+- task: NuGetAuthenticate@0
+  displayName: 'NuGet Authenticate'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+
+- task: NuGetCommand@2
+  displayName: 'NuGet Push Cds Dependency Artifact Package'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+  inputs:
+    command: 'push'   
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '0ddd6187-3494-46a5-b396-8f7be21064a3/dca352bc-32b5-4be1-8ff4-feab1bb0eb73'
+    allowPackageConflicts: true
+
+- task: CopyFiles@2
+  displayName: 'Copy DevOps Artifacts to Artifact Staging'
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: 'DeploymentPackage/temp/packed/?(*.zip)'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Deployment Artifacts to Artifact Staging'
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)/DeploymentPackage/temp/'
+    contents: 'deployment/**'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifacts to Pipeline'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
