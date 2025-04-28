@@ -1,0 +1,24 @@
+3:46:56 PM	Deploying Plugins
+3:46:56 PM	Searching for plugin config in 'D:\Repo-power-apps\PowerAppsRepo\Plugins\spkl\..'
+3:46:56 PM	Using Config 'D:\Repo-power-apps\PowerAppsRepo\Plugins'
+3:46:56 PM	Checking assembly 'Microsoft.Bcl.AsyncInterfaces.dll' for plugins
+3:46:56 PM	Checking assembly 'RepoPlugin.dll' for plugins
+3:46:56 PM	2 plugin(s) found!
+3:46:57 PM	Registering Plugin 'RepoPlugin' from 'D:\Repo-power-apps\PowerAppsRepo\Plugins\bin\Debug\RepoPlugin.dll'
+3:46:59 PM	Adding Plugin 'RepoPlugin' to solution 'ConnectToRepo'
+3:46:59 PM	Adding to solution 'ConnectToRepo'
+3:49:01 PM	Deploying Plugins
+3:49:01 PM	Searching for plugin config in 'D:\Repo-power-apps\PowerAppsRepo\Plugins\spkl\..'
+3:49:01 PM	Using Config 'D:\Repo-power-apps\PowerAppsRepo\Plugins'
+3:49:01 PM	Checking assembly 'Microsoft.Bcl.AsyncInterfaces.dll' for plugins
+3:49:01 PM	Checking assembly 'RepoPlugin.dll' for plugins
+3:49:01 PM	2 plugin(s) found!
+3:49:01 PM	Registering Plugin 'RepoPlugin' from 'D:\Repo-power-apps\PowerAppsRepo\Plugins\bin\Debug\RepoPlugin.dll'
+3:49:03 PM	Adding Plugin 'RepoPlugin' to solution 'ConnectToRepo'
+3:49:03 PM	Adding to solution 'ConnectToRepo'
+3:49:05 PM	Registering Type 'RepoPlugin.ValidateAgePlugin'
+3:49:06 PM	Registering Step 'PreCreate Validate Age'
+3:49:07 PM	Adding to solution 'ConnectToRepo'
+3:49:07 PM	Registering Step 'PreUpdate Validate Age'
+3:49:07 PM	Adding to solution 'ConnectToRepo'
+3:49:07 PM	Processed 1 config(s)
