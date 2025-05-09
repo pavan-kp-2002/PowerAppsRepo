@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml CRMServerServiceabilityVersion="9.2.25041.00198" generatedBy="CrmLive" languagecode="1033" OrganizationSchemaType="Standard" OrganizationVersion="9.2.25041.176" SolutionPackageVersion="9.2" version="9.2.25041.176" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml CRMServerServiceabilityVersion="9.2.25044.00170" generatedBy="CrmLive" languagecode="1033" OrganizationSchemaType="Standard" OrganizationVersion="9.2.25043.194" SolutionPackageVersion="9.2" version="9.2.25043.194" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>ConnectToRepo</UniqueName>
     <LocalizedNames>
       <LocalizedName description="ConnectToRepo" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>0.2025.0425.0538</Version>
+    <Version>0.2025.0509.0443</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>Sfotec</UniqueName>
@@ -79,7 +79,30 @@
     </Publisher>
     <RootComponents>
       <RootComponent behavior="0" schemaName="sf_student" type="1" />
+      <RootComponent behavior="0" schemaName="sf_university" type="1" />
+      <RootComponent behavior="0" schemaName="sf_StudentApp" type="62" />
+      <RootComponent behavior="0" schemaName="sf_StudentApp" type="80" />
+      <RootComponent behavior="0" id="{9c82cab4-be21-f011-998a-000d3af22ba6}" schemaName="RepoPlugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=845dd06677217008" type="91" />
+      <RootComponent behavior="0" id="{02ba0313-e624-f011-8c4e-000d3af22ba6}" type="92" />
+      <RootComponent behavior="0" id="{06ba0313-e624-f011-8c4e-000d3af22ba6}" type="92" />
+      <RootComponent behavior="0" id="{a282cab4-be21-f011-998a-000d3af22ba6}" type="92" />
+      <RootComponent behavior="0" id="{a682cab4-be21-f011-998a-000d3af22ba6}" type="92" />
+      <RootComponent behavior="0" id="{ffb90313-e624-f011-8c4e-000d3af22ba6}" type="92" />
     </RootComponents>
-    <MissingDependencies />
+    <MissingDependencies>
+      <MissingDependency>
+        <Required displayName="AppChannel" id.uniquename="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.13)" type="SettingDefinition">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.18">PowerAppsAppFramework_Anchor (1.0.0.18)</package>
+        </Required>
+        <Dependent displayName="parentappmoduleid.uniquename=sf_StudentApp,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="sf_StudentApp" id.settingdefinitionid.uniquename="AppChannel" type="AppSetting" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required displayName="msdyn_/Images/AppModule_Default_Icon.png" schemaName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" type="61">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent displayName="Student App" schemaName="sf_StudentApp" type="80" />
+      </MissingDependency>
+
+    </MissingDependencies>
   </SolutionManifest>
 </ImportExportXml>

@@ -1,46 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <systemform>
-    <formid>{f707d034-7264-44b9-8c5a-3b7c7e1be639}</formid>
+    <formid>{0200f351-732f-4b3a-8fd4-be8d9723d5d3}</formid>
     <IntroducedVersion>1.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form headerdensity="HighWithControls">
       <tabs>
-        <tab verticallayout="true" id="{76a40793-e6a3-49a6-a954-a2d4a2d3345c}" IsUserDefined="1">
+        <tab verticallayout="true" id="{d5f0266b-2c3c-444b-80d3-3469fb086a9f}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{4d6e558f-4415-4157-9746-058dd07ea7c9}">
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{df1d52a4-f7c2-45fd-81cd-0ca4b847583b}">
                   <labels>
                     <label description="General" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{dee430c4-34af-4b50-83e5-ae2818199053}">
+                      <cell id="{d10965f6-c8d7-4aa1-bc4a-978dc4612e3b}">
                         <labels>
-                          <label description="Name" languagecode="1033" />
+                          <label description="" languagecode="1033" />
                         </labels>
                         <control id="sf_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="sf_name" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{e3949206-40e0-43fe-bc56-6f9c0c1952ed}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{150af482-9c6a-4cac-880c-24d7cc491d7f}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Age" languagecode="1033" />
+                          <label description="" languagecode="1033" />
                         </labels>
-                        <control id="sf_age" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="sf_age" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{177bd187-5a83-4259-a54f-c2432330fb01}" locklevel="0" colspan="1" rowspan="1">
-                        <labels>
-                          <label description="University" languagecode="1033" />
-                        </labels>
-                        <control id="sf_university" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="sf_university" disabled="false" />
+                        <control id="sf_totalstudents" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="sf_totalstudents" disabled="false" />
                       </cell>
                     </row>
                   </rows>
@@ -50,47 +42,47 @@
           </columns>
         </tab>
       </tabs>
-      <header id="{5bd32a2c-2fd4-4f30-b4b7-ace73300be3e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+      <header id="{1aa55736-746b-41f0-82cd-771ccd5c746a}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
         <rows>
           <row>
-            <cell id="{26459e5d-0870-4a40-a722-3497271a6c53}" showlabel="false">
+            <cell id="{e62f8493-2b32-4226-a294-1360f9fcd43b}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{86776867-fc46-465e-8bfd-86d41ca0c9ba}" showlabel="false">
+            <cell id="{5357f7da-ec63-4aa2-b629-f606d7248483}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{d4592228-c77f-423b-a11a-4212cd8febfa}" showlabel="false">
+            <cell id="{3e2f0d58-95d2-4411-a14c-22ac7607da09}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{16b1b1d1-1bf5-401f-91d5-4ba1da1ae986}" colspan="1" rowspan="1">
+            <cell id="{24ad7918-7077-4256-803c-7b12a2534dd1}" colspan="1" rowspan="1">
               <labels>
-                <label description="Owner" languagecode="1033" />
+                <label description="" languagecode="1033" />
               </labels>
               <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
             </cell>
           </row>
         </rows>
       </header>
-      <footer id="{d3c7bc6f-2aa3-44f0-bd64-d634c8b06fe8}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+      <footer id="{ab19b493-88d4-45ad-9da0-38c4a042bf58}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
         <rows>
           <row>
-            <cell id="{6672be6e-a2fc-40c2-8354-27ccf0344874}" showlabel="false">
+            <cell id="{c44c7c14-b3bb-4468-8177-16cf7ac49cf6}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{c8d9dc26-ecc0-4c0a-a7e7-8617ed4ef8ec}" showlabel="false">
+            <cell id="{e0c0c617-611f-4103-887c-cbf0a9367636}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{4ee35815-54a3-4d61-a97c-0dd2e14de3e7}" showlabel="false">
+            <cell id="{0da44613-213d-466e-9bd4-3f53a2f86f42}" showlabel="false">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>

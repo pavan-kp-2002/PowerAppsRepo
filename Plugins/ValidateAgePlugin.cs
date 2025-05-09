@@ -29,7 +29,7 @@ namespace RepoPlugin
 
                     if(age < MINAGE || age > MAXAGE)
                     {
-                        throw new InvalidPluginExecutionException("Age must be between {MINAGE} and {MAXAGE}");
+                        throw new InvalidPluginExecutionException($"Age must be between {MINAGE} and {MAXAGE}");
                     }
                 }
                     

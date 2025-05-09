@@ -209,8 +209,24 @@
     <Compile Include="App_Packages\CCLLC.Core.ProcessModel.1.1.5\RecordPointer.cs" />
     <Compile Include="App_Packages\CCLLC.Core.ProcessModel.1.1.5\SettingsProvider.cs" />
     <Compile Include="App_Packages\CCLLC.Core.ProcessModel.1.1.5\SettingsProviderFactory.cs" />
+    <Compile Include="AutoRollUpCalculationPlugin.cs" />
     <Compile Include="CrmPluginRegistrationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxies\Entities\account.cs" />
+    <Compile Include="Proxies\Entities\businessunit.cs" />
+    <Compile Include="Proxies\Entities\contact.cs" />
+    <Compile Include="Proxies\Entities\customeraddress.cs" />
+    <Compile Include="Proxies\Entities\sf_airlines.cs" />
+    <Compile Include="Proxies\Entities\sf_airlines_account.cs" />
+    <Compile Include="Proxies\Entities\sf_emailactivityusermapping.cs" />
+    <Compile Include="Proxies\Entities\sf_repository.cs" />
+    <Compile Include="Proxies\Entities\sf_student.cs" />
+    <Compile Include="Proxies\Entities\sf_university.cs" />
+    <Compile Include="Proxies\Entities\systemuser.cs" />
+    <Compile Include="Proxies\GlobalEnums\ActivitypointerDeliveryprioritycode.cs" />
+    <Compile Include="Proxies\GlobalEnums\ArpAccounttype.cs" />
+    <Compile Include="Proxies\GlobalEnums\Powerpagelanguages.cs" />
+    <Compile Include="Proxies\GlobalEnums\SocialprofileCommunity.cs" />
     <Compile Include="ValidateAgePlugin.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,15 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml CRMServerServiceabilityVersion="9.2.25041.00198" OrganizationSchemaType="Standard" OrganizationVersion="9.2.25041.176" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml CRMServerServiceabilityVersion="9.2.25044.00170" OrganizationSchemaType="Standard" OrganizationVersion="9.2.25043.194" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Entities />
   <Roles />
   <Workflows />
   <FieldSecurityProfiles />
   <Templates />
+  <EntityImageConfigs>
+    <EntityImageConfig>
+      <parententitylogicalname>account</parententitylogicalname>
+      <primaryimageattribute>entityimage</primaryimageattribute>
+    </EntityImageConfig>
+  </EntityImageConfigs>
+  <AttributeImageConfigs>
+    <AttributeImageConfig>
+      <attributelogicalname>entityimage</attributelogicalname>
+      <parententitylogicalname>account</parententitylogicalname>
+      <canstorefullimage>0</canstorefullimage>
+    </AttributeImageConfig>
+  </AttributeImageConfigs>
   <EntityMaps />
   <EntityRelationships />
   <OrganizationSettings />
   <optionsets />
   <CustomControls />
+  <SolutionPluginAssemblies />
+  <SdkMessageProcessingSteps />
+  <AppModuleSiteMaps />
+  <AppModules />
   <EntityDataProviders />
   <Languages>
     <Language>1033</Language>

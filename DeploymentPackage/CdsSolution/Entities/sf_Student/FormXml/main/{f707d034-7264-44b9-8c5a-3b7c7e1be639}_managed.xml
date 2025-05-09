@@ -5,7 +5,7 @@
     <IntroducedVersion>1.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
-    <form>
+    <form headerdensity="HighWithControls">
       <tabs>
         <tab verticallayout="true" id="{76a40793-e6a3-49a6-a954-a2d4a2d3345c}" IsUserDefined="1">
           <labels>
@@ -28,11 +28,19 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{16b1b1d1-1bf5-401f-91d5-4ba1da1ae986}">
+                      <cell id="{e3949206-40e0-43fe-bc56-6f9c0c1952ed}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
-                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                        <control id="sf_age" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="sf_age" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{177bd187-5a83-4259-a54f-c2432330fb01}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="sf_university" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="sf_university" disabled="false" />
                       </cell>
                     </row>
                   </rows>
@@ -42,6 +50,57 @@
           </columns>
         </tab>
       </tabs>
+      <header id="{5bd32a2c-2fd4-4f30-b4b7-ace73300be3e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{26459e5d-0870-4a40-a722-3497271a6c53}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{86776867-fc46-465e-8bfd-86d41ca0c9ba}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d4592228-c77f-423b-a11a-4212cd8febfa}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{16b1b1d1-1bf5-401f-91d5-4ba1da1ae986}" colspan="1" rowspan="1">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{d3c7bc6f-2aa3-44f0-bd64-d634c8b06fe8}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{6672be6e-a2fc-40c2-8354-27ccf0344874}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{c8d9dc26-ecc0-4c0a-a7e7-8617ed4ef8ec}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{4ee35815-54a3-4d61-a97c-0dd2e14de3e7}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
     </form>
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>
